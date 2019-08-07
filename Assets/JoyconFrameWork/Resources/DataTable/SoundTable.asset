@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bfdb30abd6d50e40879aad5f6e33ce2, type: 3}
+  m_Name: SoundTable
+  m_EditorClassIdentifier: 
+  soundInfoList:
+  - index: 0
+    path: Sound/BGM/
+    tag: bg1
+  - index: 1
+    path: Sound/SE1/
+    tag: card_close
+  - index: 2
+    path: Sound/SE1/
+    tag: cardStart
+  - index: 3
+    path: Sound/SE2/
+    tag: answer
+  - index: 4
+    path: Sound/SE2/
+    tag: card_wrong
