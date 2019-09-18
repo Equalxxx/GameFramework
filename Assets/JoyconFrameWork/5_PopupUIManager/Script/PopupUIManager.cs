@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PopupUIManager : Singleton_Prefab<PopupUIManager>
 {
+    private ResourceManager.LinkType resLinkType = ResourceManager.LinkType.AssetBundle;
+
     public ProtoPopupUI curPopupUI;
     public GameObject popupModal;
     public Transform popupParent;
@@ -11,13 +13,12 @@ public class PopupUIManager : Singleton_Prefab<PopupUIManager>
     public List<ProtoPopupUI> popupUIList;
 
     //PopupUI Data
-    [SerializeField]
-    private string tablePath = "DataTable/PopupUITable";
+    private string tablePath = "datatable";
     private PopupUITable popupUITable;
 
     private void Awake()
     {
-        popupUITable = Resources.Load(tablePath) as PopupUITable;
+        popupUITable = ResourceManager.LoadAsset(tablePath, "PopupUITable", resLinkType) as PopupUITable;
 
         ShowModal(false);
     }
@@ -68,9 +69,9 @@ public class PopupUIManager : Singleton_Prefab<PopupUIManager>
                 return null;
             }
 
-            string resourcePath = string.Format("{0}{1}", popupUIInfo.path, popupUIInfo.tag);
+            //string resourcePath = string.Format("{0}{1}", popupUIInfo.path, popupUIInfo.tag);
 
-            GameObject newObj = Resources.Load(resourcePath) as GameObject;
+            GameObject newObj = ResourceManager.LoadAsset(popupUIInfo.path, popupUIInfo.tag, resLinkType) as GameObject;
             if(newObj == null)
             {
                 Debug.LogError("Not found popup ui : " + _tag);

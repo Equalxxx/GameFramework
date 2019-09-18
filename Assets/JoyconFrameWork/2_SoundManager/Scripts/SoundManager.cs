@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : Singleton<SoundManager>
 {
-
+    private ResourceManager.LinkType resLinkType = ResourceManager.LinkType.AssetBundle;
     private Dictionary<string, AudioClip> soundDic;
 
     private AudioSource seAudio;
@@ -22,13 +22,14 @@ public class SoundManager : Singleton<SoundManager>
 
     //Sound Data
     [SerializeField]
-    private string tablePath = "DataTable/SoundTable";
+    private string tablePath = "datatable";
     private SoundTable soundTable;
 
     private void Awake()
     {
         soundDic = new Dictionary<string, AudioClip>();
-        soundTable = Resources.Load(tablePath) as SoundTable;
+
+        soundTable = ResourceManager.LoadAsset(tablePath, "SoundTable", resLinkType) as SoundTable;
 
         seAudio = this.gameObject.AddComponent<AudioSource>();
         bgmAudio0 = this.gameObject.AddComponent<AudioSource>();
@@ -73,11 +74,6 @@ public class SoundManager : Singleton<SoundManager>
         seAudio.volume = seVolume * masterVolume;
         bgmAudio0.volume = bgmVolume0 * masterVolume;
         bgmAudio1.volume = bgmVolume1 * masterVolume;
-    }
-
-    private void OnDestroy()
-    {
-        UnloadResourcesAll();
     }
 
     ///<summary>
@@ -299,10 +295,8 @@ public class SoundManager : Singleton<SoundManager>
                 return null;
             }
 
-            string resourcePath = string.Format("{0}{1}", soundInfo.path, soundInfo.tag);
-
-            //Resources 에서 오디오클립 로드
-            AudioClip newClip = Resources.Load(resourcePath) as AudioClip;
+            //AssetBundle 에서 오디오클립 로드
+            AudioClip newClip = ResourceManager.LoadAsset(soundInfo.path, soundInfo.tag, resLinkType) as AudioClip;
 
             if (newClip == null)
             {
@@ -315,25 +309,5 @@ public class SoundManager : Singleton<SoundManager>
         }
 
         return soundDic[_tag];
-    }
-
-    ///<summary>
-    ///Unload resource with tag
-    ///</summary>
-    public void UnloadResource(string _tag)
-    {
-        if (soundDic.ContainsKey(_tag))
-            soundDic.Remove(_tag);
-
-        Resources.UnloadUnusedAssets();
-    }
-
-    ///<summary>
-    ///Unload resource all
-    ///</summary>
-    public void UnloadResourcesAll()
-    {
-        soundDic.Clear();
-        Resources.UnloadUnusedAssets();
     }
 }

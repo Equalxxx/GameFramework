@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 628580863
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 75707d8eab6317a9406f37cab84b2697
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3f7d0c5e0986ec71841622bcb2f9be1c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/JoyconFrameWork/2_SoundManager/Sound/SE2/card_wrong.mp3
+- Assets/JoyconFrameWork/2_SoundManager/Sound/SE2/answer.mp3
+Dependencies: []

@@ -17,6 +17,7 @@ public class TestPoolingBtn : MonoBehaviour {
     {
         button = this.GetComponent<Button>();
         button.onClick.AddListener(PressedBtn);
+
         PoolManager.Instance.PrepareAssets(objectName, parentTrans);
     }
 

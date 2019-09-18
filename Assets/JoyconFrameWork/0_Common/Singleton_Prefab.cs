@@ -14,8 +14,8 @@ public class Singleton_Prefab<T> : MonoBehaviour where T : MonoBehaviour
 
                 if (s_Instance == null)
                 {
-                    string resourcePath = string.Format("Manager/{0}", typeof(T));
-                    var singletonObject = Instantiate(Resources.Load(resourcePath) as GameObject);
+                    //string resourcePath = string.Format("Manager/{0}", typeof(T));
+                    var singletonObject = Instantiate(ResourceManager.LoadAsset("manager",typeof(T).ToString()) as GameObject);
                     s_Instance = singletonObject.GetComponent<T>();
                     singletonObject.name = typeof(T).ToString();
                 }

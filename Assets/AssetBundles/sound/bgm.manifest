@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 410076151
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 50e1bb3039cf3d7242db641c17026fea
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3f7d0c5e0986ec71841622bcb2f9be1c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/JoyconFrameWork/2_SoundManager/Sound/BGM/bg1.mp3
+Dependencies: []

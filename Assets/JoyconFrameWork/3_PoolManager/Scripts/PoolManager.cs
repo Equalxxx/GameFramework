@@ -1,34 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
+using System.IO;
 
 public class PoolManager : Singleton<PoolManager>
 {
-    private Dictionary<string, List<GameObject>> poolDic;
-    public List<Transform> parentList;
+    public ResourceManager.LinkType resLinkType = ResourceManager.LinkType.AssetBundle;
+    private Dictionary<string, List<GameObject>> poolDic = new Dictionary<string, List<GameObject>>();
+    private Dictionary<string, GameObject> prefabDic = new Dictionary<string, GameObject>();
+    private List<Transform> parentList = new List<Transform>();
 
     //Pool Data
     [SerializeField]
-    private string tablePath = "DataTable/PoolTable";
+    private string tablePath = "datatable";
     private PoolTable poolTable;
-
-    private void Awake()
-    {
-        poolDic = new Dictionary<string, List<GameObject>>();
-        parentList = new List<Transform>();
-        poolTable = Resources.Load(tablePath) as PoolTable;
-    }
-
-    private void OnDestroy()
-    {
-        UnloadResourcesAll();
-    }
 
     ///<summary>
     ///Prepare Sound Asset
     ///</summary>
     public void PrepareAssets(string _tag, Transform _parentTrans = null)
     {
+        if(poolTable == null)
+        {
+            poolTable = ResourceManager.LoadAsset(tablePath, "PoolTable", resLinkType) as PoolTable;
+            if (poolTable == null)
+            {
+                Debug.LogError("Not found PoolTable");
+                return;
+            }
+        }
+
         if (poolDic.ContainsKey(_tag))
             return;
 
@@ -38,6 +40,9 @@ public class PoolManager : Singleton<PoolManager>
             Debug.LogError("Prepare Faild. Not found pool info : " + _tag);
             return;
         }
+
+        GameObject newPrefab = ResourceManager.LoadAsset(poolInfo.path, poolInfo.tag, resLinkType) as GameObject;
+        prefabDic.Add(poolInfo.tag, newPrefab);
 
         for (int i = 0; i < poolInfo.preloadCount; i++)
         {
@@ -83,10 +88,6 @@ public class PoolManager : Singleton<PoolManager>
     GameObject GetPoolObject(string _tag, Transform _parentTrans = null)
     {
         List<GameObject> poolList = GetPoolList(_tag);
-        if (poolList == null)
-        {
-            return null;
-        }
 
         GameObject spawnObj = poolList.Find(x => !x.activeSelf);
         if (spawnObj == null)
@@ -100,28 +101,21 @@ public class PoolManager : Singleton<PoolManager>
     GameObject CreatePoolObject(string _tag, Transform _parentTrans = null)
     {
         List<GameObject> poolList = GetPoolList(_tag);
-        if (poolList == null)
-        {
-            return null;
-        }
 
         //Resources 경로 설정
         PoolTable.PoolInfo poolInfo = poolTable.GetPoolInfo(_tag);
-        if(poolInfo == null)
+        if (poolInfo == null)
         {
             Debug.LogError("Not found PoolInfo : " + _tag);
             return null;
         }
-        string resourcePath = string.Format("{0}{1}", poolInfo.path, poolInfo.tag);
-
-        //Resources 에서 오브젝트 로드
-        GameObject newObj = Resources.Load(resourcePath) as GameObject;
-        if (newObj == null)
+        
+        if (!prefabDic.ContainsKey(_tag))
         {
             return null;
         }
 
-        newObj = Instantiate(newObj);
+        GameObject newObj = Instantiate(prefabDic[_tag]);
 
         newObj.SetActive(false);
 
@@ -163,33 +157,5 @@ public class PoolManager : Singleton<PoolManager>
         }
 
         return poolDic[_tag];
-    }
-
-    ///<summary>
-    ///Unload resource with tag
-    ///</summary>
-    public void UnloadResource(string _tag)
-    {
-        if (poolDic.ContainsKey(_tag))
-            poolDic.Remove(_tag);
-
-        Resources.UnloadUnusedAssets();
-    }
-
-    ///<summary>
-    ///Unload resource all
-    ///</summary>
-    public void UnloadResourcesAll()
-    {
-        foreach (KeyValuePair<string, List<GameObject>> keyPair in poolDic)
-        {
-            foreach (GameObject poolObj in keyPair.Value)
-            {
-                Destroy(poolObj);
-            }
-        }
-
-        poolDic.Clear();
-        Resources.UnloadUnusedAssets();
     }
 }

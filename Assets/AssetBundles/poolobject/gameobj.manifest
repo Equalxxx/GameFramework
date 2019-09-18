@@ -1,0 +1,46 @@
+ManifestFileVersion: 0
+CRC: 166688207
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: fbd3b7bc3df91a5c04d13dd2984a6fa0
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: e912c43b17f9196562dd1b7fc11a4205
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 03cab9a2f024c9e4c9c442cc2499fdbf, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 853c589c64458d0498ec39e2fbc54788, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 135
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+Assets:
+- Assets/JoyconFrameWork/3_PoolManager/Prefabs/PoolObject/gameobj/CanvasImage.prefab
+- Assets/JoyconFrameWork/3_PoolManager/Prefabs/PoolObject/gameobj/Cube.prefab
+- Assets/JoyconFrameWork/3_PoolManager/Prefabs/PoolObject/gameobj/Sphere.prefab
+Dependencies: []

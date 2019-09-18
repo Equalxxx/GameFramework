@@ -1,0 +1,44 @@
+ManifestFileVersion: 0
+CRC: 3737479444
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8ab2ba5fe216ba5c43faf70166ca448d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 59f827c6926481ab8f3c44626877a710
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8fd540b379703eb409fc632242328170, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 17973a9d6a66c1640bfcea4039233847, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+Assets:
+- Assets/JoyconFrameWork/5_PopupUIManager/Prefabs/PopupUIManager.prefab
+Dependencies: []

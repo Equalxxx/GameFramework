@@ -12,8 +12,8 @@ public class DefaultImage : MonoBehaviour, IPoolObject {
         Debug.Log("Spawn : " + this.gameObject.name);
 
         Vector3 rndPos = this.transform.position;
-        rndPos.x += Random.Range(0f, 1f);
-        rndPos.y += Random.Range(0f, 1f);
+        rndPos.x += Random.Range(-30f, 30f);
+        rndPos.y += Random.Range(-30f, 30f);
         this.transform.position = rndPos;
 
         if (autoDisable)

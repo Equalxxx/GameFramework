@@ -1,0 +1,34 @@
+ManifestFileVersion: 0
+CRC: 1191609334
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: poolobject/gameobj
+      Dependencies: {}
+    Info_1:
+      Name: poolobject/effect1
+      Dependencies: {}
+    Info_2:
+      Name: poolobject/effect2
+      Dependencies: {}
+    Info_3:
+      Name: sound/se1
+      Dependencies: {}
+    Info_4:
+      Name: sound/se2
+      Dependencies: {}
+    Info_5:
+      Name: sound/bgm
+      Dependencies: {}
+    Info_6:
+      Name: datatable
+      Dependencies: {}
+    Info_7:
+      Name: popup_ui/testpopup
+      Dependencies: {}
+    Info_8:
+      Name: manager
+      Dependencies: {}
+    Info_9:
+      Name: testresource
+      Dependencies: {}

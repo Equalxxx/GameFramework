@@ -12,7 +12,7 @@ public class SODataTableReader : EditorWindow
 	public UnityEngine.Object ProtoExcelFile = null;
 	private static string lastMsg = string.Empty;
 	private string selectedExcelPath = "Assets/JoyconFrameWork/1_ExcelDataReader/Editor/Table/SODataTable.xlsx";
-	private string selectedExportPath = "Assets/JoyconFrameWork/Resources/BasicDataTable";
+	private string selectedExportPath = "Assets/JoyconFrameWork/1_ExcelDataReader/DataTable";
 	[MenuItem ("DataReader/SODataTable Reader", false, 1)]
 
 	public static void Init(){ 

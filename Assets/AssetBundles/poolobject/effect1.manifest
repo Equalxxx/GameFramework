@@ -1,0 +1,32 @@
+ManifestFileVersion: 0
+CRC: 3400598452
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4f0137be1cb052f2babda8ac3c71e3af
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3e4d5489dfe2537e9b62aabaf86a0ea4
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7274bb117ce8c244cafe344c0db022ea, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+Assets:
+- Assets/JoyconFrameWork/3_PoolManager/Prefabs/PoolObject/Effect1/Particle1.prefab
+Dependencies: []

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class StringText : MonoBehaviour {
 
     public int stringIndex;
@@ -14,7 +14,6 @@ public class StringText : MonoBehaviour {
     private void Awake()
     {
         strText = this.GetComponent<Text>();
-        strText.text = StringManager.GetStr(stringIndex);
     }
 
     private void OnEnable()

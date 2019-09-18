@@ -1,0 +1,28 @@
+ManifestFileVersion: 0
+CRC: 770655320
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3d48e9bb792c4d3dae77370fb3708af1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: af825f563d9222d563658188fe32d3a4
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 28849e21404c254448540b75ec173f14, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3bfdb30abd6d50e40879aad5f6e33ce2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 37163c8de07304247916996c56a6b475, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d588d55e4e380c447b3d8dc43fc03516, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/JoyconFrameWork/2_SoundManager/DataTable/SoundTable.asset
+- Assets/JoyconFrameWork/4_StringTable/DataTable/StringTable_KR.asset
+- Assets/JoyconFrameWork/3_PoolManager/DataTable/PoolTable.asset
+- Assets/JoyconFrameWork/5_PopupUIManager/DataTable/PopupUITable.asset
+- Assets/JoyconFrameWork/4_StringTable/DataTable/StringTable_ENG.asset
+Dependencies: []

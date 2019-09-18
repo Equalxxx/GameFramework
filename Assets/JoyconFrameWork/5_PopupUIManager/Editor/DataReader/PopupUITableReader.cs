@@ -12,7 +12,7 @@ public class PopupUITableReader : EditorWindow
 	public UnityEngine.Object ProtoExcelFile = null;
 	private static string lastMsg = string.Empty;
 	private string selectedExcelPath = "Assets/JoyconFrameWork/5_PopupUIManager/Table/PopupUITable.xlsx";
-	private string selectedExportPath = "Assets/JoyconFrameWork/Resources/DataTable";
+	private string selectedExportPath = "Assets/JoyconFrameWork/5_PopupUIManager/DataTable";
 	[MenuItem ("DataReader/PopupUITable Reader", false, 1)]
 
 	public static void Init(){
@@ -88,15 +88,15 @@ public class PopupUITableReader : EditorWindow
                 for (int i = 0; i < itemDataTable.Count; i++)
                 {
                     string prefabFilePath = prefabPath + "/PopupUITable.asset";
-                    ScriptableObject stringTableSO = (ScriptableObject)AssetDatabase.LoadAssetAtPath(prefabFilePath, typeof(ScriptableObject));
-                    if (stringTableSO == null)
+                    ScriptableObject popupUITableSO = (ScriptableObject)AssetDatabase.LoadAssetAtPath(prefabFilePath, typeof(ScriptableObject));
+                    if (popupUITableSO == null)
                     {
-                        stringTableSO = ScriptableObject.CreateInstance<PopupUITable>();
-                        AssetDatabase.CreateAsset(stringTableSO, prefabFilePath);
-                        stringTableSO.hideFlags = HideFlags.NotEditable;
+                        popupUITableSO = ScriptableObject.CreateInstance<PopupUITable>();
+                        AssetDatabase.CreateAsset(popupUITableSO, prefabFilePath);
+                        popupUITableSO.hideFlags = HideFlags.NotEditable;
                     }
 
-                    PopupUITable popupUIDataTable = (PopupUITable)stringTableSO;
+                    PopupUITable popupUIDataTable = (PopupUITable)popupUITableSO;
 
                     popupUIDataTable.popupUIInfoList.Clear();
 
@@ -135,7 +135,7 @@ public class PopupUITableReader : EditorWindow
                     AssetDatabase.SaveAssets();
                     AssetDatabase.Refresh();
 
-                    EditorUtility.SetDirty(stringTableSO);
+                    EditorUtility.SetDirty(popupUITableSO);
                 }
 
                 lastMsg = "Succeeded import data to prefab file : PopupUITable";

@@ -12,7 +12,7 @@ public class StringTableReader : EditorWindow
 	public UnityEngine.Object ProtoExcelFile = null;
 	private static string lastMsg = string.Empty;
 	private string selectedExcelPath = "Assets/JoyconFrameWork/4_StringTable/Table/StringTable.xlsx";
-	private string selectedExportPath = "Assets/JoyconFrameWork/Resources/DataTable";
+	private string selectedExportPath = "Assets/JoyconFrameWork/4_StringTable/DataTable";
 	[MenuItem ("DataReader/StringTable Reader", false, 1)]
 
 	public static void Init(){

@@ -5,9 +5,10 @@ using UnityEngine;
 
 public enum LanguageType { KR, ENG }
 
-[ExecuteInEditMode]
-public class StringManager : Singleton_Prefab<StringManager> {
+//[ExecuteInEditMode]
+public class StringManager : Singleton<StringManager> {
 
+    private ResourceManager.LinkType resLinkType = ResourceManager.LinkType.AssetBundle;
     public StringTable stringTable;
 
     public LanguageType langType;
@@ -16,13 +17,14 @@ public class StringManager : Singleton_Prefab<StringManager> {
     public bool showStringIndex;
     private bool oldShowStringIndex;
 
-    public string dataPath = "DataTable/StringTable_";
+    private string dataPath = "datatable";
     public static Action OnChangeLanguage;
     public static Action OnShowStringindex;
 
-    public static string GetStr(int strIndex)
+
+    private void Awake()
     {
-        return Instance.stringTable.GetStringData(strIndex);
+        LoadStringTable();
     }
 
     private void Update()
@@ -45,14 +47,18 @@ public class StringManager : Singleton_Prefab<StringManager> {
         if (stringTable == null)
         {
             oldType = langType;
-            StartCoroutine(LoadStringTable());
+            LoadStringTable();
         }
     }
 
-    IEnumerator LoadStringTable()
+    public static string GetStr(int strIndex)
     {
-        stringTable = Resources.Load(dataPath + langType.ToString()) as StringTable;
-        yield return stringTable;
+        return Instance.stringTable.GetStringData(strIndex);
+    }
+
+    void LoadStringTable()
+    {
+        stringTable = ResourceManager.LoadAsset(dataPath, "StringTable_" + langType.ToString(), resLinkType) as StringTable;
 
         Debug.Log("Load Complete StringTable : " + langType);
 

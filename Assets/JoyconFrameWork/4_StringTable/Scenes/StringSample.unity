@@ -398,7 +398,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC774\uB9AC\uC624\uC138\uC694"
+  m_Text: Come here
 --- !u!222 &269019533
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -880,7 +880,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBC18\uAC11\uC2B5\uB2C8\uB2E4"
+  m_Text: Nice to meet you
 --- !u!222 &755179627
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -967,7 +967,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC5B4\uC11C\uC624\uC138\uC694"
+  m_Text: Welcome
 --- !u!222 &955964879
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1181,7 +1181,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC548\uB155\uD558\uC138\uC694"
+  m_Text: Nice to meet you
 --- !u!222 &1704866114
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1268,57 +1268,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC5B4\uB514\uAC00\uC138\uC694"
+  m_Text: Where are you going
 --- !u!222 &1806341972
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1806341968}
---- !u!1 &1809333179
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1809333181}
-  - component: {fileID: 1809333180}
-  m_Layer: 0
-  m_Name: StringManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1809333180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1809333179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d81bf7eda7d470a4ab6889d08e9cd0d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stringTable: {fileID: 11400000, guid: 36cd89263c8941143bd61ee41debe47b, type: 2}
-  langType: 0
-  showStringIndex: 0
-  dataPath: DataTable/StringTable_
---- !u!4 &1809333181
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1809333179}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1817605243
 GameObject:
   m_ObjectHideFlags: 0
